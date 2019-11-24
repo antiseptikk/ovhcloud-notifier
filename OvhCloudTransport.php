@@ -46,14 +46,14 @@ final class OvhCloudTransport extends AbstractTransport
 
     public function setHostByEndpoint(?string $endpoint): self
     {
-        $this->host = $this->endpoints[$endpoint] ?: self::HOST;
+        $this->host = $this->endpoints[$endpoint] ?? self::HOST;
 
         return $this;
     }
 
     public function __toString(): string
     {
-        return sprintf('ovhcloud://%s?consumer_key=%s&service_name=%s', $this->getEndpoint(), $this->consumerKey, $this->serviceName);
+        return sprintf('ovhcloud://%s:%s@%s?consumer_key=%s&service_name=%s', $this->applicationKey, $this->applicationSecret, $this->getEndpoint(), $this->consumerKey, $this->serviceName);
     }
 
     public function supports(MessageInterface $message): bool
