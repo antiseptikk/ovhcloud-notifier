@@ -1,0 +1,36 @@
+{
+    "name": "antiseptikk/ovhcloud-notifier",
+    "type": "symfony-bridge",
+    "description": "OvhCloud Bridge for Symfony Notifier",
+    "keywords": ["sms", "ovh", "ovhcloud", "notifier"],
+    "homepage": "https://github.com/antiseptikk/ovhcloud-notifier",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Thomas Ferney",
+            "email": "thomas.ferney@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2.5",
+        "symfony/http-client": "^4.3|^5.0",
+        "symfony/notifier": "^5.0"
+    },
+    "autoload": {
+        "psr-4": { "Notifier\\Bridge\\OvhCloud\\": "" },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Notifier\\Bridge\\OvhCloud\\Tests\\": "Tests"
+        }
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0"
+        }
+    }
+}
